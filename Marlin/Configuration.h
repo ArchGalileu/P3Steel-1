@@ -525,14 +525,14 @@
  * Override with M92
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4]]]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 319.474, 320.813, 7950.09, 559.5, 559.5 } 
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 319.474, 320.813, 796.01, 559.5, 559.5 } 
 
 /**
  * Default Max Feed Rate (mm/s)
  * Override with M203
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4]]]]
  */
-#define DEFAULT_MAX_FEEDRATE          { 80, 60, 1.75, 300, 300 }
+#define DEFAULT_MAX_FEEDRATE          { 90, 70, 13, 150, 150 }
 
 /**
  * Default Max Acceleration (change/s) change = mm/s
@@ -540,7 +540,7 @@
  * Override with M201
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4]]]]
  */
-#define DEFAULT_MAX_ACCELERATION      { 3500, 1200, 100, 10000, 10000 }
+#define DEFAULT_MAX_ACCELERATION      { 4000, 1500, 1000, 10000, 10000 }
 
 /**
  * Default Acceleration (change/s) change = mm/s
@@ -562,9 +562,9 @@
  * When changing speed and direction, if the difference is less than the
  * value set here, it may happen instantaneously.
  */
-#define DEFAULT_XJERK                 20.0
+#define DEFAULT_XJERK                 25.0
 #define DEFAULT_YJERK                 20.0
-#define DEFAULT_ZJERK                  0.4
+#define DEFAULT_ZJERK                  1.0
 #define DEFAULT_EJERK                  5.0
 
 //===========================================================================
@@ -922,7 +922,7 @@
   //===========================================================================
 
   #define UBL_MESH_INSET 10          // Mesh inset margin on print area
-  #define GRID_MAX_POINTS_X 8      // Don't use more than 15 points per axis, implementation limited.
+  #define GRID_MAX_POINTS_X 10      // Don't use more than 15 points per axis, implementation limited.
   #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
 
   #define UBL_PROBE_PT_1_X 39       // Probing points for 3-Point leveling of the mesh
@@ -999,7 +999,7 @@
 
 // Homing speeds (mm/m)
 #define HOMING_FEEDRATE_XY (200*60)
-#define HOMING_FEEDRATE_Z  (1.5*60)
+#define HOMING_FEEDRATE_Z  (13*60)
 
 //=============================================================================
 //============================= Additional Features ===========================
@@ -1016,7 +1016,7 @@
 // M502 - reverts to the default "factory settings".  You still need to store them in EEPROM afterwards if you want to.
 //
 #define EEPROM_SETTINGS // Enable for M500 and M501 commands
-#define DISABLE_M503    // Saves ~2700 bytes of PROGMEM. Disable for release!
+//#define DISABLE_M503    // Saves ~2700 bytes of PROGMEM. Disable for release!
 #define EEPROM_CHITCHAT   // Give feedback on EEPROM commands. Disable to save PROGMEM.
 
 //
